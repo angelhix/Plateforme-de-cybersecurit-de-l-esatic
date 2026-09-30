@@ -31,7 +31,7 @@ function Classement() {
     [],
   );
   const [promo, setPromo] = useState("toutes");
-  const [season, setSeason] = useState(seasons[0].id);
+  const [season, setSeason] = useState(seasons[0]!.id);
 
   const rows = leaderboard.filter((e) => promo === "toutes" || e.promotion === promo);
 

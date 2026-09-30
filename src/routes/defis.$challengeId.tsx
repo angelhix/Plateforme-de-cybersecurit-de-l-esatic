@@ -22,9 +22,9 @@ export const Route = createFileRoute("/defis/$challengeId")({
     return {
       meta: [
         { title },
-        { name: "description", content: challenge.statement[0] },
+        { name: "description", content: challenge.statement[0]! },
         { property: "og:title", content: title },
-        { property: "og:description", content: challenge.statement[0] },
+        { property: "og:description", content: challenge.statement[0]! },
       ],
     };
   },

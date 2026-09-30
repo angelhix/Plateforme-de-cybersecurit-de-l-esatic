@@ -80,7 +80,7 @@ export function SimTerminal({
       if (!history.length) return;
       const idx = historyIndex === null ? history.length - 1 : Math.max(0, historyIndex - 1);
       setHistoryIndex(idx);
-      setValue(history[idx]);
+      setValue(history[idx] ?? "");
       return;
     }
     if (e.key === "ArrowDown") {
@@ -92,7 +92,7 @@ export function SimTerminal({
         setValue("");
       } else {
         setHistoryIndex(idx);
-        setValue(history[idx]);
+        setValue(history[idx] ?? "");
       }
     }
   }

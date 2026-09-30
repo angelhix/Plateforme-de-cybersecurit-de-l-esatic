@@ -1082,8 +1082,8 @@ export const ranks: Rank[] = [
   { name: "Élite", min: 3000 },
 ];
 
-export function rankFor(points: number) {
-  return [...ranks].reverse().find((r) => points >= r.min) ?? ranks[0];
+export function rankFor(points: number): Rank {
+  return [...ranks].reverse().find((r) => points >= r.min) ?? ranks[0]!;
 }
 
 export function nextRankFor(points: number) {

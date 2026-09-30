@@ -37,9 +37,9 @@ export const Route = createFileRoute("/tableau-de-bord")({
 function Dashboard() {
   const rank = rankFor(currentUser.points);
   const next = nextRankFor(currentUser.points);
-  const currentModule = modules.find((m) => m.progress > 0 && m.progress < 100) ?? modules[0];
+  const currentModule = modules.find((m) => m.progress > 0 && m.progress < 100) ?? modules[0]!;
   const currentLesson =
-    currentModule.lessons.find((l) => l.status === "current") ?? currentModule.lessons[0];
+    currentModule.lessons.find((l) => l.status === "current") ?? currentModule.lessons[0]!;
   const suggested = challenges.filter((c) => c.status !== "résolu").slice(0, 3);
   const liveEvent = events.find((e) => e.status === "en cours");
   const maxPoints = Math.max(...activity.map((a) => a.points), 1);
