@@ -12,7 +12,7 @@ import {
   type Difficulty,
 } from "@/lib/mock-data";
 
-export const Route = createFileRoute("/defis")({
+export const Route = createFileRoute("/defis/")({
   head: () => ({
     meta: [
       { title: "Défis CTF — ESATIC Cyber" },
