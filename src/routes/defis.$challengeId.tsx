@@ -40,7 +40,7 @@ function ChallengeDetail() {
   const [revealed, setRevealed] = useState<number[]>([]);
   const [solved, setSolved] = useState(challenge.status === "résolu");
 
-  const penalty = revealed.reduce((s, i) => s + challenge.hints[i].cost, 0);
+  const penalty = revealed.reduce((s, i) => s + (challenge.hints[i]?.cost ?? 0), 0);
   const remaining = challenge.maxAttempts - attempts;
 
   function submitFlag(e: React.FormEvent) {
