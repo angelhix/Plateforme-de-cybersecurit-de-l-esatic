@@ -29,7 +29,7 @@ export const Route = createFileRoute("/profil")({
       },
     ],
   }),
-  component: Profil;
+  component: Profil,
 });
 
 function Profil() {
