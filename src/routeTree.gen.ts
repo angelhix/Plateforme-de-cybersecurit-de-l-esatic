@@ -10,33 +10,194 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdministrationRouteImport } from './routes/administration'
+import { Route as ClassementRouteImport } from './routes/classement'
+import { Route as ConnexionRouteImport } from './routes/connexion'
+import { Route as EvenementsRouteImport } from './routes/evenements'
+import { Route as ProfilRouteImport } from './routes/profil'
+import { Route as TableauDeBordRouteImport } from './routes/tableau-de-bord'
+import { Route as TerminalRouteImport } from './routes/terminal'
+import { Route as DefisIndexRouteImport } from './routes/defis.index'
+import { Route as DefisChallengeIdRouteImport } from './routes/defis.$challengeId'
+import { Route as ParcoursIndexRouteImport } from './routes/parcours.index'
+import { Route as ParcoursModuleIdIndexRouteImport } from './routes/parcours.$moduleId.index'
+import { Route as ParcoursModuleIdLeconLessonIdRouteImport } from './routes/parcours.$moduleId.lecon.$lessonId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministrationRoute = AdministrationRouteImport.update({
+  id: '/administration',
+  path: '/administration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClassementRoute = ClassementRouteImport.update({
+  id: '/classement',
+  path: '/classement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnexionRoute = ConnexionRouteImport.update({
+  id: '/connexion',
+  path: '/connexion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvenementsRoute = EvenementsRouteImport.update({
+  id: '/evenements',
+  path: '/evenements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfilRoute = ProfilRouteImport.update({
+  id: '/profil',
+  path: '/profil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TableauDeBordRoute = TableauDeBordRouteImport.update({
+  id: '/tableau-de-bord',
+  path: '/tableau-de-bord',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerminalRoute = TerminalRouteImport.update({
+  id: '/terminal',
+  path: '/terminal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DefisIndexRoute = DefisIndexRouteImport.update({
+  id: '/defis/',
+  path: '/defis/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DefisChallengeIdRoute = DefisChallengeIdRouteImport.update({
+  id: '/defis/$challengeId',
+  path: '/defis/$challengeId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParcoursIndexRoute = ParcoursIndexRouteImport.update({
+  id: '/parcours/',
+  path: '/parcours/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParcoursModuleIdIndexRoute = ParcoursModuleIdIndexRouteImport.update({
+  id: '/parcours/$moduleId/',
+  path: '/parcours/$moduleId/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParcoursModuleIdLeconLessonIdRoute =
+  ParcoursModuleIdLeconLessonIdRouteImport.update({
+    id: '/parcours/$moduleId/lecon/$lessonId',
+    path: '/parcours/$moduleId/lecon/$lessonId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/administration': typeof AdministrationRoute
+  '/classement': typeof ClassementRoute
+  '/connexion': typeof ConnexionRoute
+  '/evenements': typeof EvenementsRoute
+  '/profil': typeof ProfilRoute
+  '/tableau-de-bord': typeof TableauDeBordRoute
+  '/terminal': typeof TerminalRoute
+  '/defis/$challengeId': typeof DefisChallengeIdRoute
+  '/defis/': typeof DefisIndexRoute
+  '/parcours/': typeof ParcoursIndexRoute
+  '/parcours/$moduleId/': typeof ParcoursModuleIdIndexRoute
+  '/parcours/$moduleId/lecon/$lessonId': typeof ParcoursModuleIdLeconLessonIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/administration': typeof AdministrationRoute
+  '/classement': typeof ClassementRoute
+  '/connexion': typeof ConnexionRoute
+  '/evenements': typeof EvenementsRoute
+  '/profil': typeof ProfilRoute
+  '/tableau-de-bord': typeof TableauDeBordRoute
+  '/terminal': typeof TerminalRoute
+  '/defis/$challengeId': typeof DefisChallengeIdRoute
+  '/defis': typeof DefisIndexRoute
+  '/parcours': typeof ParcoursIndexRoute
+  '/parcours/$moduleId': typeof ParcoursModuleIdIndexRoute
+  '/parcours/$moduleId/lecon/$lessonId': typeof ParcoursModuleIdLeconLessonIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/administration': typeof AdministrationRoute
+  '/classement': typeof ClassementRoute
+  '/connexion': typeof ConnexionRoute
+  '/evenements': typeof EvenementsRoute
+  '/profil': typeof ProfilRoute
+  '/tableau-de-bord': typeof TableauDeBordRoute
+  '/terminal': typeof TerminalRoute
+  '/defis/$challengeId': typeof DefisChallengeIdRoute
+  '/defis/': typeof DefisIndexRoute
+  '/parcours/': typeof ParcoursIndexRoute
+  '/parcours/$moduleId/': typeof ParcoursModuleIdIndexRoute
+  '/parcours/$moduleId/lecon/$lessonId': typeof ParcoursModuleIdLeconLessonIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/administration'
+    | '/classement'
+    | '/connexion'
+    | '/evenements'
+    | '/profil'
+    | '/tableau-de-bord'
+    | '/terminal'
+    | '/defis/$challengeId'
+    | '/defis/'
+    | '/parcours/'
+    | '/parcours/$moduleId/'
+    | '/parcours/$moduleId/lecon/$lessonId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/administration'
+    | '/classement'
+    | '/connexion'
+    | '/evenements'
+    | '/profil'
+    | '/tableau-de-bord'
+    | '/terminal'
+    | '/defis/$challengeId'
+    | '/defis'
+    | '/parcours'
+    | '/parcours/$moduleId'
+    | '/parcours/$moduleId/lecon/$lessonId'
+  id:
+    | '__root__'
+    | '/'
+    | '/administration'
+    | '/classement'
+    | '/connexion'
+    | '/evenements'
+    | '/profil'
+    | '/tableau-de-bord'
+    | '/terminal'
+    | '/defis/$challengeId'
+    | '/defis/'
+    | '/parcours/'
+    | '/parcours/$moduleId/'
+    | '/parcours/$moduleId/lecon/$lessonId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdministrationRoute: typeof AdministrationRoute
+  ClassementRoute: typeof ClassementRoute
+  ConnexionRoute: typeof ConnexionRoute
+  EvenementsRoute: typeof EvenementsRoute
+  ProfilRoute: typeof ProfilRoute
+  TableauDeBordRoute: typeof TableauDeBordRoute
+  TerminalRoute: typeof TerminalRoute
+  DefisChallengeIdRoute: typeof DefisChallengeIdRoute
+  DefisIndexRoute: typeof DefisIndexRoute
+  ParcoursIndexRoute: typeof ParcoursIndexRoute
+  ParcoursModuleIdIndexRoute: typeof ParcoursModuleIdIndexRoute
+  ParcoursModuleIdLeconLessonIdRoute: typeof ParcoursModuleIdLeconLessonIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +209,107 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administration': {
+      id: '/administration'
+      path: '/administration'
+      fullPath: '/administration'
+      preLoaderRoute: typeof AdministrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/classement': {
+      id: '/classement'
+      path: '/classement'
+      fullPath: '/classement'
+      preLoaderRoute: typeof ClassementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connexion': {
+      id: '/connexion'
+      path: '/connexion'
+      fullPath: '/connexion'
+      preLoaderRoute: typeof ConnexionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evenements': {
+      id: '/evenements'
+      path: '/evenements'
+      fullPath: '/evenements'
+      preLoaderRoute: typeof EvenementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profil': {
+      id: '/profil'
+      path: '/profil'
+      fullPath: '/profil'
+      preLoaderRoute: typeof ProfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tableau-de-bord': {
+      id: '/tableau-de-bord'
+      path: '/tableau-de-bord'
+      fullPath: '/tableau-de-bord'
+      preLoaderRoute: typeof TableauDeBordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terminal': {
+      id: '/terminal'
+      path: '/terminal'
+      fullPath: '/terminal'
+      preLoaderRoute: typeof TerminalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/defis/': {
+      id: '/defis/'
+      path: '/defis'
+      fullPath: '/defis/'
+      preLoaderRoute: typeof DefisIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/defis/$challengeId': {
+      id: '/defis/$challengeId'
+      path: '/defis/$challengeId'
+      fullPath: '/defis/$challengeId'
+      preLoaderRoute: typeof DefisChallengeIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parcours/': {
+      id: '/parcours/'
+      path: '/parcours'
+      fullPath: '/parcours/'
+      preLoaderRoute: typeof ParcoursIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parcours/$moduleId/': {
+      id: '/parcours/$moduleId/'
+      path: '/parcours/$moduleId'
+      fullPath: '/parcours/$moduleId/'
+      preLoaderRoute: typeof ParcoursModuleIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parcours/$moduleId/lecon/$lessonId': {
+      id: '/parcours/$moduleId/lecon/$lessonId'
+      path: '/parcours/$moduleId/lecon/$lessonId'
+      fullPath: '/parcours/$moduleId/lecon/$lessonId'
+      preLoaderRoute: typeof ParcoursModuleIdLeconLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdministrationRoute: AdministrationRoute,
+  ClassementRoute: ClassementRoute,
+  ConnexionRoute: ConnexionRoute,
+  EvenementsRoute: EvenementsRoute,
+  ProfilRoute: ProfilRoute,
+  TableauDeBordRoute: TableauDeBordRoute,
+  TerminalRoute: TerminalRoute,
+  DefisChallengeIdRoute: DefisChallengeIdRoute,
+  DefisIndexRoute: DefisIndexRoute,
+  ParcoursIndexRoute: ParcoursIndexRoute,
+  ParcoursModuleIdIndexRoute: ParcoursModuleIdIndexRoute,
+  ParcoursModuleIdLeconLessonIdRoute: ParcoursModuleIdLeconLessonIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
