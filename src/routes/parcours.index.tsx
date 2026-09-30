@@ -5,7 +5,7 @@ import { AppShell } from "@/components/app-shell";
 import { ModuleCard } from "@/components/ui-bits";
 import { levels, modules, type LevelId } from "@/lib/mock-data";
 
-export const Route = createFileRoute("/parcours")({
+export const Route = createFileRoute("/parcours/")({
   head: () => ({
     meta: [
       { title: "Parcours — ESATIC Cyber" },

@@ -5,7 +5,7 @@ import { AppShell } from "@/components/app-shell";
 import { ChallengeCard, Meter, SectionTitle, Tag } from "@/components/ui-bits";
 import { challengesForModule, moduleById } from "@/lib/mock-data";
 
-export const Route = createFileRoute("/parcours/$moduleId")({
+export const Route = createFileRoute("/parcours/$moduleId/")({
   loader: ({ params }) => {
     const mod = moduleById(params.moduleId);
     if (!mod) throw notFound();
