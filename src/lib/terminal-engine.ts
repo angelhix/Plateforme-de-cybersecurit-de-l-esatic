@@ -155,10 +155,11 @@ export function runCommand(
       return {
         state: next,
         lines: names.sort().map((n) => {
-          const child = node.children[n];
+          const child = node.children[n]!;
           const isDir = child.type === "dir";
+          const size = child.type === "file" ? String(child.content.length).padStart(4, " ") : "4096";
           return out(
-            `${isDir ? "drwxr-xr-x" : "-rw-r--r--"}  etudiant  ${isDir ? "4096" : String(child.content.length).padStart(4, " ")}  ${n}${isDir ? "/" : ""}`,
+            `${isDir ? "drwxr-xr-x" : "-rw-r--r--"}  etudiant  ${size}  ${n}${isDir ? "/" : ""}`,
           );
         }),
       };
